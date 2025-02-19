@@ -1,9 +1,12 @@
 public class WrapSelectionTextCommand extends WrapTextCommand {
     private String selection;
+
     public WrapSelectionTextCommand(String opening, String closing, String selection) {
         super(opening, closing);
+        this.selection = selection;
     }
 
+    @Override
     public String execute(String text) {
         if (text == null) {
             return null;
