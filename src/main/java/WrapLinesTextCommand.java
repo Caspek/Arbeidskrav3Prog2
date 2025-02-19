@@ -7,6 +7,11 @@ public class WrapLinesTextCommand extends WrapTextCommand {
         if (text == null) {
             return null;
         }
-        return getOpening() + text + getClosing();
+        String[] lines = text.split("\n");
+        StringBuilder wrappedText = new StringBuilder();
+        for (String line : lines) {
+            wrappedText.append(getOpening()).append(line).append(getClosing()).append("\n");
+        }
+        return wrappedText.toString().trim();
     }
 }
