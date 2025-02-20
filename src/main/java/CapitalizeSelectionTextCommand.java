@@ -9,7 +9,8 @@ public class CapitalizeSelectionTextCommand extends TextCommand {
         if (text == null) {
             return null;
         }
-        return text.replace(selection, selection.toUpperCase());
+        String capitalizedSelection = selection.substring(0, 1).toUpperCase() + selection.substring(1);
+        return text.replace(selection, capitalizedSelection);
     }
 
     public String getSelection() {
